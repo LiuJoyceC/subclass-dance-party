@@ -21,7 +21,16 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  border:10px solid yellow;
   border-radius:10px;
   position:absolute;
+}
+.blue{
+  border:10px solid blue;
+  /*border: 0px;
+  background: url("http://sports-logos-screensavers.com/user/RiceOwls.jpg")*/
+}
+.red{
+  border-radius:0px;
+  border:0px solid red;
 }
