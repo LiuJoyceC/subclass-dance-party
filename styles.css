@@ -26,9 +26,9 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .blue{
-  border:10px solid blue;
-  /*border: 0px;
-  background: url("http://sports-logos-screensavers.com/user/RiceOwls.jpg")*/
+  /*border:10px solid blue;*/
+  border: 0px;
+  background: url("http://sports-logos-screensavers.com/user/RiceOwls.jpg")
 }
 .red{
   border-radius:0px;

@@ -22,12 +22,25 @@ $(document).ready(function(){
 
     // make a dancer with a random position
 
-    var dancer = dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+    var dancer = new dancerMakerFunction(
+      $("body").height() * Math.random() * 0.95,
+      $("body").width() * Math.random() * 0.95,
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
   });
+
+  $(".lineUpButton").on("click", function(event){
+    var spacing = $("body").height() / (dancers.length+1);
+    var middle = $("body").width() / 2;
+    for (var i = 0; i < dancers.length; i++) {
+      if(dancers[i].constructor === TaylorDancer) {
+        dancers[i].top = i * spacing;
+      }
+      dancers[i].setPosition(i*spacing,middle);
+    }
+  });
+
 });
 
