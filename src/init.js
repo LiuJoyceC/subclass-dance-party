@@ -59,10 +59,13 @@ $(document).ready(function(){
       if (i >= players.length) {
         break;
       }
-      var rand = Math.floor(Math.random() * players.length);
-      if (players[rand].hasBall === null) {
-        players[rand].hasBall = footballs[i];
-        footballs[i].setPosition(players[rand].top, players[rand].left+25)
+      while (true) {
+        var rand = Math.floor(Math.random() * players.length);
+        if (players[rand].hasBall === null) {
+          players[rand].hasBall = footballs[i];
+          footballs[i].setPosition(players[rand].top, players[rand].left+25)
+          break;
+        }
       }
     }
   });
