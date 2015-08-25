@@ -9,10 +9,11 @@ var TaylorDancer = function(top, left, timeBetweenSteps){
 };
 TaylorDancer.prototype = Object.create(Dancer.prototype);
 TaylorDancer.prototype.constructor = TaylorDancer;
-TaylorDancer.prototype.oldStep = Dancer.prototype.step;
+// TaylorDancer.prototype.oldStep = Dancer.prototype.step;
 TaylorDancer.prototype.step = function(){
     // call the old version of step at the beginning of any call to this new version of step
-    this.oldStep.call(this);
+    // this.oldStep.call(this);
+    Dancer.prototype.step.call(this);
     // toggle() is a jQuery method to show/hide the <span> tag.
     // See http://api.jquery.com/category/effects/ for this and
     // other effects you can use on a jQuery-wrapped html tag.
@@ -29,7 +30,7 @@ TaylorDancer.prototype.step = function(){
     }
     this.setPosition(this.top, this.left);
     if(this.hasBall){
-      this.hasBall.setPosition(this.top, this.left+15);
+      this.hasBall.setPosition(this.top, this.left+25);
     }
   };
 
