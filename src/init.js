@@ -62,13 +62,9 @@ $(document).ready(function(){
       var rand = Math.floor(Math.random() * players.length);
       if (players[rand].hasBall === null) {
         players[rand].hasBall = footballs[i];
-        footballs[i].setPosition(players[rand].top, players[rand].left+15)
+        footballs[i].setPosition(players[rand].top, players[rand].left+25)
       }
     }
-  });
-
-  $(".ref").on("mouseenter", 'img', function(event){
-    $(this).attr("src", "http://content.sportslogos.net/logos/33/813/full/2587.png");
   });
 
 });

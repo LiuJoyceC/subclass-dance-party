@@ -3,7 +3,7 @@
 var JoyceDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
   this.isblue = true;
-  this.$node = $('<img class="dancer red" style="width:20px;height:20px" src="http://sports-logos-screensavers.com/user/RiceOwls.jpg"></img>');
+  this.$node = $('<img class="dancer red" style="width:30px;height:30px" src="http://sports-logos-screensavers.com/user/RiceOwls.jpg"></img>');
   this.setPosition(top, left);
   this.hasBall = null;
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,

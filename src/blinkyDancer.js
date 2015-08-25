@@ -1,6 +1,6 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<img class="dancer ref" style="width:20px;height:20px" src="http://cdn.flaticon.com/png/256/26708.png"></img>');
+  this.$node = $('<img class="dancer ref" style="width:30px;height:30px" src="http://cdn.flaticon.com/png/256/26708.png"></img>');
   this.setPosition(top, left);
 
   this.$node.on("mouseenter", function(event){
