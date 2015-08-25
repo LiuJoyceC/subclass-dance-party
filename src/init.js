@@ -1,5 +1,7 @@
 $(document).ready(function(){
   window.dancers = [];
+  window.footballs = [];
+  window.players = [];
 
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
@@ -29,17 +31,44 @@ $(document).ready(function(){
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
+    if (dancer.constructor === BallDancer) {
+      window.footballs.push(dancer);
+    } else if (dancer.constructor === BlinkyDancer){
+      // do nothing
+    } else {
+      window.players.push(dancer);
+    }
   });
 
   $(".lineUpButton").on("click", function(event){
     var spacing = $("body").height() / (dancers.length+1);
     var middle = $("body").width() / 2;
     for (var i = 0; i < dancers.length; i++) {
-      if(dancers[i].constructor === TaylorDancer) {
-        dancers[i].top = i * spacing;
-      }
       dancers[i].setPosition(i*spacing,middle);
+      dancers[i].top = i * spacing;
+      dancers[i].left = middle;
+      dancers[i].hasBall = null;
     }
+  });
+
+  $(".passButton").on("click", function(event){
+    for (var j = 0; j < players.length; j++) {
+      players[j].hasBall = null;
+    }
+    for (var i = 0; i < footballs.length; i++) {
+      if (i >= players.length) {
+        break;
+      }
+      var rand = Math.floor(Math.random() * players.length);
+      if (players[rand].hasBall === null) {
+        players[rand].hasBall = footballs[i];
+        footballs[i].setPosition(players[rand].top, players[rand].left+15)
+      }
+    }
+  });
+
+  $(".ref").on("mouseenter", 'img', function(event){
+    $(this).attr("src", "http://content.sportslogos.net/logos/33/813/full/2587.png");
   });
 
 });

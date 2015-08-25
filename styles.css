@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url("http://rockymountainshowdown.com/wp-content/uploads/2013/06/background1.jpg");
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,14 +21,14 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid yellow;
-  border-radius:10px;
+  border:0px;
+  border-radius: 0px;
   position:absolute;
 }
 .blue{
   /*border:10px solid blue;*/
   border: 0px;
-  background: url("http://sports-logos-screensavers.com/user/RiceOwls.jpg")
+  background-image: url("http://sports-logos-screensavers.com/user/RiceOwls.jpg");
 }
 .red{
   border-radius:0px;
